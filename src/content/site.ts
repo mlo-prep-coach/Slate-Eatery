@@ -229,6 +229,7 @@ export const menu = {
               price: "$3.50",
             },
             { name: "Biscuit", description: "Warm from the oven.", price: "$2.50" },
+            { name: "Pancake (1)", description: "A single pancake on the side.", price: "Ask" },
             { name: "Country Gravy", description: "Cup $3 · bowl $4.", price: "$3" },
             { name: "Tomato Slices", description: "Fresh sliced.", price: "$1.50" },
           ],

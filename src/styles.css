@@ -1,0 +1,186 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+/* ============================================================
+   THE ONE THEME FILE
+   Change colors, fonts, spacing and radii here — the whole site
+   follows. Everything below is a CSS variable used through
+   Tailwind semantic classes (bg-primary, text-brand, etc).
+   ============================================================ */
+
+@theme inline {
+  /* Fonts */
+  --font-display: var(--font-heading);
+  --font-sans: var(--font-body);
+
+  /* Radii — soft & friendly everywhere */
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 3px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 12px);
+  --radius-3xl: calc(var(--radius) + 20px);
+
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Extra warm brand tokens */
+  --color-cream: var(--cream);
+  --color-butter: var(--butter);
+  --color-brick: var(--brick);
+  --color-cocoa: var(--cocoa);
+  --color-sage: var(--sage);
+
+  /* Layout */
+  --spacing-section: var(--section-padding);
+  --container-content: var(--content-max-width);
+}
+
+:root {
+  /* ---- Typography ---- */
+  --font-heading: "Nunito", ui-rounded, "Segoe UI", sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+
+  /* ---- Shape & rhythm ---- */
+  --radius: 1rem;
+  --section-padding: 4.5rem;
+  --content-max-width: 1150px;
+
+  /* ---- Warm, bright, homey palette ---- */
+  --cream: oklch(0.977 0.019 84);
+  --butter: oklch(0.885 0.117 88);
+  --brick: oklch(0.578 0.163 32);
+  --cocoa: oklch(0.36 0.055 52);
+  --sage: oklch(0.72 0.062 145);
+
+  --background: oklch(0.985 0.014 86);
+  --foreground: oklch(0.31 0.045 50);
+
+  --card: oklch(1 0.004 90);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0.004 90);
+  --popover-foreground: var(--foreground);
+
+  --primary: var(--brick);
+  --primary-foreground: oklch(0.99 0.012 90);
+
+  --secondary: oklch(0.94 0.048 84);
+  --secondary-foreground: var(--cocoa);
+
+  --muted: oklch(0.955 0.026 86);
+  --muted-foreground: oklch(0.52 0.043 55);
+
+  --accent: var(--butter);
+  --accent-foreground: var(--cocoa);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0.01 90);
+
+  --border: oklch(0.9 0.032 82);
+  --input: oklch(0.9 0.032 82);
+  --ring: var(--brick);
+
+  /* ---- Effects ---- */
+  --shadow-soft: 0 6px 20px -8px oklch(0.36 0.055 52 / 0.22);
+  --shadow-lifted: 0 14px 34px -12px oklch(0.36 0.055 52 / 0.3);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+@utility shadow-lifted {
+  box-shadow: var(--shadow-lifted);
+}
+
+/* Section wrapper: comfortable padding, centered content */
+@utility section-pad {
+  padding-top: 3.25rem;
+  padding-bottom: 3.25rem;
+  @media (min-width: 768px) {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+}
+
+@utility container-content {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Gentle scroll-in fade */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 600ms ease-out,
+    transform 600ms ease-out;
+}
+
+@utility reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

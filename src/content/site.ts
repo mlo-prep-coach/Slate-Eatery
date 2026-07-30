@@ -579,6 +579,100 @@ export const menu = {
           ],
         },
         {
+          name: "Entrees",
+          items: [
+            {
+              name: "Ribeye Steak Dinner",
+              description:
+                "Served with your choice of potato or rice, plus soup, salad or coleslaw and bread.",
+              price: "$23",
+            },
+            {
+              name: "Salmon Dinner",
+              description: "Served with soup, salad or coleslaw and bread.",
+              price: "$18",
+            },
+            {
+              name: "Fish 'n Chips (3 pc)",
+              description: "Served with soup, salad or coleslaw and bread.",
+              price: "$16",
+            },
+            {
+              name: "Jumbo Shrimp Dinner (6 pc)",
+              description: "Served with your choice of potato or rice.",
+              price: "$15",
+            },
+            {
+              name: "Chicken Breast Dinner",
+              description: "Served with soup, salad or coleslaw and bread.",
+              price: "$12",
+            },
+            {
+              name: "Chicken Strip Dinner (5 pc)",
+              description: "Served with soup, salad or coleslaw and bread.",
+              price: "$12",
+            },
+          ],
+        },
+        {
+          name: "Pasta",
+          items: [
+            {
+              name: "Elizabeth Pasta",
+              description:
+                "Coconut shrimp, spinach and Italian macaroni noodles with creamy tomato sauce. Served with garlic bread.",
+              price: "$12",
+            },
+            {
+              name: "Spaghetti",
+              description: "Topped with tomato sauce and mozzarella cheese.",
+              price: "$13",
+            },
+            {
+              name: "Lasagna",
+              description: "Baked with ground beef and shredded mozzarella.",
+              price: "$13",
+            },
+            {
+              name: "Chicken Alfredo",
+              description:
+                "Alfredo noodles topped with creamy alfredo sauce and grilled chicken.",
+              price: "$15",
+            },
+            {
+              name: "Chicken Parmesan",
+              description:
+                "Chicken breast and mushroom cheese sauce served over spaghetti noodles.",
+              price: "$15",
+            },
+          ],
+        },
+        {
+          name: "Stir Fry",
+          items: [
+            {
+              name: "Veggie Stir Fry",
+              description: "Served with rice and stir fry vegetables.",
+              price: "$15",
+            },
+            {
+              name: "Chicken Stir Fry",
+              description: "Served with rice and stir fry vegetables.",
+              price: "$18",
+            },
+            {
+              name: "Jumbo Shrimp Stir Fry",
+              description: "Served with rice and stir fry vegetables.",
+              price: "$20",
+            },
+            {
+              name: "Steak Stir Fry",
+              description: "Served with rice and stir fry vegetables.",
+              price: "$22",
+            },
+          ],
+        },
+        {
           name: "Flat Bread Pizza",
           items: [
             {
@@ -730,9 +824,29 @@ export const reviews = {
       text: "Lovely little place to eat! The staff was very kind, the food was super yummy! They have an espresso bar which is rare around this area and the espresso was perfect.",
     },
     {
-      name: "Doug F.",
+      name: "Chip A.",
       rating: 5,
-      text: "Had the opportunity to stop into Slate Eatery for a photoshoot. Noah, Dominic, Violet, and Donika were all accommodating and treated me like family. They do take a little time to cook, but the presentation and quality are superb.",
+      text: "Got the (big) Elizabeth Breakfast — 3 eggs, 3 types of meat and all. Wow. A lot of food for $10. Service and food were excellent. See you all again soon.",
+    },
+    {
+      name: "Howard B.",
+      rating: 5,
+      text: "What an awesome breakfast spot! Everything was fantastic and very reasonably priced. Small business so please go support!",
+    },
+    {
+      name: "Nicholas K.",
+      rating: 5,
+      text: "My coworker and I stopped here for lunch around 2pm. The waitress was very friendly and accommodating. The restaurant was clean and aesthetically pleasing. The food tasted fresh and came quickly. I would recommend Slate for anyone in the area looking for a nice sit down restaurant.",
+    },
+    {
+      name: "Jake S.",
+      rating: 5,
+      text: "Great food, reasonable prices (multiple lunch deals), fast service, would eat here again.",
+    },
+    {
+      name: "Brandon C.",
+      rating: 5,
+      text: "Discovered this place when they opened and they have been clearly investing in it ever since which I think is great! The food is good, the menu is big but not overwhelming and the service is spot on!",
     },
   ],
   googleLabel: "Posted on Google",

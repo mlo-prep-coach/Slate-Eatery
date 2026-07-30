@@ -880,6 +880,6 @@ export const footer = {
   blurb:
     "A neighborhood breakfast and lunch spot on Elizabeth Lake Road in Pontiac, Michigan.",
   quickLinksTitle: "Quick Links",
-  followTitle: "Say Hello",
+  followTitle: "Find Us Online",
   copyright: `© ${new Date().getFullYear()} Slate Eatery. All rights reserved.`,
 };

@@ -3,11 +3,13 @@ import { contact, restaurant } from "@/content/site";
 import { Reveal } from "@/components/Reveal";
 
 export function ContactSection() {
+  /* Entries with an empty value are dropped, so a restaurant without a
+     public email address simply shows one card fewer. */
   const items = [
     { icon: Phone, label: "Phone", value: restaurant.phone, href: restaurant.phoneHref },
     { icon: Mail, label: "Email", value: restaurant.email, href: `mailto:${restaurant.email}` },
     { icon: MapPin, label: "Address", value: restaurant.address, href: restaurant.directionsUrl },
-  ];
+  ].filter((item) => item.value);
 
   return (
     <section id="contact" className="section-pad bg-cocoa text-cream">
@@ -17,7 +19,11 @@ export function ContactSection() {
           <p className="mx-auto mt-3 max-w-2xl text-cream/80">{contact.intro}</p>
         </Reveal>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <div
+          className={`mt-8 grid gap-4 ${
+            items.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3"
+          }`}
+        >
           {items.map((item, i) => (
             <Reveal key={item.label} delay={i * 80}>
               <a

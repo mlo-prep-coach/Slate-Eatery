@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { seo } from "@/content/site";
 import { NavBar } from "@/components/sections/NavBar";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
@@ -14,18 +15,10 @@ import { FooterSection } from "@/components/sections/FooterSection";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "[RESTAURANT NAME] — Neighborhood Family Diner" },
-      {
-        name: "description",
-        content:
-          "Hearty home cooking, daily specials and bottomless coffee at [RESTAURANT NAME]. See our menu, hours and directions.",
-      },
-      { property: "og:title", content: "[RESTAURANT NAME] — Neighborhood Family Diner" },
-      {
-        property: "og:description",
-        content:
-          "Comfort food, friendly faces and daily specials. Menu, hours and directions for [RESTAURANT NAME].",
-      },
+      { title: seo.title },
+      { name: "description", content: seo.description },
+      { property: "og:title", content: seo.title },
+      { property: "og:description", content: seo.description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

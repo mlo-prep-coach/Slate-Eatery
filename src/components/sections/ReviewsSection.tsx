@@ -34,7 +34,11 @@ export function ReviewsSection() {
           <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">{reviews.intro}</p>
         </Reveal>
 
-        <div className="mt-9 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          className={`mt-9 grid gap-5 md:grid-cols-2 ${
+            reviews.items.length > 2 ? "lg:grid-cols-3" : ""
+          }`}
+        >
           {reviews.items.map((r, i) => (
             <Reveal key={r.name} delay={(i % 3) * 80}>
               <article className="flex h-full flex-col rounded-3xl bg-card p-6 shadow-soft transition-all duration-300 hover:shadow-lifted">
